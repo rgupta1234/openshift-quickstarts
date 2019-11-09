@@ -47,7 +47,7 @@ public class ServletServer {
     public static final String MYAPP = "/";
    
     public static void main(final String[] args) {
-        InetAddress ip;
+        InetAddress ip = null;
         String hostname;
         try {
             ip = InetAddress.getLocalHost();

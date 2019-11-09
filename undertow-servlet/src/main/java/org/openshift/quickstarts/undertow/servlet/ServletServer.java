@@ -45,15 +45,21 @@ import java.security.KeyStore;
 public class ServletServer {
 
     public static final String MYAPP = "/";
-    public static String ip;
-       public static InetAddress;
+   
     public static void main(final String[] args) {
       
-        
-        try(final DatagramSocket socket = new DatagramSocket()){
-  socket.connect(InetAddress.getByName("8.8.8.8"), 10002);
-  ip = socket.getLocalAddress().getHostAddress();
-}
+         InetAddress ip;
+        String hostname;
+        try {
+            ip = InetAddress.getLocalHost();
+            hostname = ip.getHostName();
+            System.out.println("Your current IP address : " + ip);
+            System.out.println("Your current Hostname : " + hostname);
+ 
+        } catch (UnknownHostException e) {
+ 
+            e.printStackTrace();
+        }
         
         try {
      

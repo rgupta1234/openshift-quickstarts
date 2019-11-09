@@ -17,7 +17,7 @@
  */
 
 package org.openshift.quickstarts.undertow.servlet;
-
+import java.net.DatagramSocket;
 import javax.net.ssl.KeyManager;
 import javax.net.ssl.KeyManagerFactory;
 import javax.net.ssl.SSLContext;
@@ -46,8 +46,13 @@ public class ServletServer {
     public static final String MYAPP = "/";
 
     public static void main(final String[] args) {
+     try(final DatagramSocket socket = new DatagramSocket()){
+  socket.connect(InetAddress.getByName("8.8.8.8"), 10002);
+  ip = socket.getLocalAddress().getHostAddress();
+}
+        
         try {
-
+     
             DeploymentInfo servletBuilder = deployment()
                     .setClassLoader(ServletServer.class.getClassLoader())
                     .setContextPath(MYAPP)

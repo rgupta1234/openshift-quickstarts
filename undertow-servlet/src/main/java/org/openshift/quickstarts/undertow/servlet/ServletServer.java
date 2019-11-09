@@ -18,6 +18,7 @@
 
 package org.openshift.quickstarts.undertow.servlet;
 import java.net.DatagramSocket;
+import java.net.InetAddress;
 import javax.net.ssl.KeyManager;
 import javax.net.ssl.KeyManagerFactory;
 import javax.net.ssl.SSLContext;

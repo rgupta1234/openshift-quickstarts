@@ -17,8 +17,7 @@
  */
 
 package org.openshift.quickstarts.undertow.servlet;
-import java.net.DatagramSocket;
-import java.net.InetAddress;
+ 
 import javax.net.ssl.KeyManager;
 import javax.net.ssl.KeyManagerFactory;
 import javax.net.ssl.SSLContext;
@@ -47,20 +46,7 @@ public class ServletServer {
     public static final String MYAPP = "/";
    
     public static void main(final String[] args) {
-      
-         InetAddress ip;
-        String hostname;
-        try {
-            ip = InetAddress.getLocalHost();
-            hostname = ip.getHostName();
-            System.out.println("Your current IP address : " + ip);
-            System.out.println("Your current Hostname : " + hostname);
- 
-        } catch (UnknownHostException e) {
- 
-            e.printStackTrace();
-        }
-        
+       
         try {
      
             DeploymentInfo servletBuilder = deployment()

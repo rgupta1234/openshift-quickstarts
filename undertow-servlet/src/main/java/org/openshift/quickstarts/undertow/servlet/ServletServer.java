@@ -45,10 +45,10 @@ import java.security.KeyStore;
 public class ServletServer {
 
     public static final String MYAPP = "/";
-    
-    public static void main(final String[] args) {
-       public String ip;
+    public String ip;
        public InetAddress;
+    public static void main(final String[] args) {
+      
         
         try(final DatagramSocket socket = new DatagramSocket()){
   socket.connect(InetAddress.getByName("8.8.8.8"), 10002);

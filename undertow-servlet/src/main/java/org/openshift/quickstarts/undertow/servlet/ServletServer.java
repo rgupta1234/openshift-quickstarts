@@ -45,8 +45,8 @@ import java.security.KeyStore;
 public class ServletServer {
 
     public static final String MYAPP = "/";
-    public String ip;
-       public InetAddress;
+    public static String ip;
+       public static InetAddress;
     public static void main(final String[] args) {
       
         

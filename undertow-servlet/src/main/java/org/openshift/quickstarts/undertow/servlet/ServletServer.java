@@ -28,7 +28,8 @@ import io.undertow.server.HttpHandler;
 import io.undertow.server.handlers.PathHandler;
 import io.undertow.servlet.api.DeploymentInfo;
 import io.undertow.servlet.api.DeploymentManager;
-
+import java.net.InetAddress;
+import java.net.UnknownHostException;
 import static io.undertow.servlet.Servlets.defaultContainer;
 import static io.undertow.servlet.Servlets.deployment;
 import static io.undertow.servlet.Servlets.servlet;
@@ -46,7 +47,18 @@ public class ServletServer {
     public static final String MYAPP = "/";
    
     public static void main(final String[] args) {
-       
+        InetAddress ip;
+        String hostname;
+        try {
+            ip = InetAddress.getLocalHost();
+            hostname = ip.getHostName();
+            System.out.println("Your current IP address : " + ip);
+            System.out.println("Your current Hostname : " + hostname);
+ 
+        } catch (UnknownHostException e) {
+ 
+            e.printStackTrace();
+        }
         try {
      
             DeploymentInfo servletBuilder = deployment()
